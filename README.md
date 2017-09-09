@@ -537,6 +537,34 @@ $buttons: (
 }
 ```
 
+問
+@at-rootを使って下記のような
+
+```scss
+.content {
+  color: #fff;
+}
+.content__text {
+  color: #eee;
+}
+.content__link {
+  color: #e2e2e2;
+}
+```
+
+CSSを出力するようにしてください
+
+```scss
+.content {
+  color: #fff;
+  @at-root #{&}__text {
+    color: #eee;
+  }
+  @at-root #{&}__link {
+    color: #e2e2e2;
+  }
+}
+```
 
 参照
 http://postd.cc/when-to-use-extend-when-to-use-a-mixin/
