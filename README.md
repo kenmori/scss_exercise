@@ -139,3 +139,23 @@ div {
 
 ```
 
+問
+
+```scss
+@function halfWidth($width: 50px){
+  @return $width / 2;
+}
+p {
+  width: halfWidth(100px);
+}
+```
+
+問 色を投げると.5のopacityになるrgba組み込み関数
+
+```scss
+.classe {
+  color: rgba(#fff, 0.5);
+}
+```
+
+
