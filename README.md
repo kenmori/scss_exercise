@@ -290,7 +290,7 @@ li {
 ```
 
 問
-
+breakpointのmixinを作りたい。
 smallを767px, mediumを992px, largeを1200pxとしたブレイクポイントをそれぞれのkeyを渡すと作ってくれるmixinを作成、もしsmallが渡って来たらcolor:#fffとするように任意のセレクタに対して読み込んでください
 
 ```scss
@@ -316,4 +316,42 @@ li {
     color: #fff;
   }
 }
+```
+
+問
+下記
+
+```scss
+.fa-glass:before {
+  content: "\f000";
+}
+.fa-music:before {
+  content: "\f001";
+}
+.fa-search:before {
+  content: "\f002";
+}
+.fa-envelope-o:before {
+  content: "\f003";
+}
+.fa-heart:before {
+  content: "\f004";
+}
+```
+を@eachで生成してください
+
+```scss
+$icons: (
+  glass: "\f000",
+  music: "\f001",
+  search: "\f002",
+  envelop-o: "\f003",
+  heart: "\f004"
+);
+@each $key, $value in $icons {
+  li.fa-#{$key}:before {
+    content: $value;
+  }
+}
+
 ```
