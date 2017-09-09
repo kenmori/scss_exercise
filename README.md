@@ -251,4 +251,69 @@ $colors: (
 }
 ```
 
+問
 
+```scss
+$colors: (
+  brand-red: #c0392b,
+  brand-blue: #2980b9,
+  text-gray: #2c3e50,
+  text-sliver: #bdc3c7,
+);
+$borderColors: (
+  red: red,
+  green: green
+);
+```
+
+こちらをmergeして
+contentプロパティの値としてkey名を出力してください
+
+```scss
+$colors: (
+  brand-red: #c0392b,
+  brand-blue: #2980b9,
+  text-gray: #2c3e50,
+  text-sliver: #bdc3c7,
+);
+$borderColors: (
+  red: red,
+  green: green
+);
+
+$newColor: map-merge($colors, $borderColors);
+
+li {
+  content: map-keys($newColor);
+  color: map-get($newColor, red);//$newColorの中から選ぶ
+}
+```
+
+問
+
+smallを767px, mediumを992px, largeを1200pxとしたブレイクポイントをそれぞれのkeyを渡すと作ってくれるmixinを作成、もしsmallが渡って来たらcolor:#fffとするように任意のセレクタに対して読み込んでください
+
+```scss
+
+$breakpoints: (
+  small: 767px,
+  medium: 992px,
+  large: 1200px
+);
+
+@mixin widthCreator($breakpoint){
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: #{map-get($breakpoints, $breakpoint)}){
+     @content;
+    }
+  } @else {
+    @warn "not exists key"
+  }
+}
+li {
+  color: 000;
+  @include widthCreator(small){
+    color: #fff;
+  }
+}
+```
