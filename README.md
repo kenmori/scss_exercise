@@ -76,7 +76,7 @@ $kv: 'twitter','facebook';
 ```
 
 問6
-1~nまで繰り返し(今回は1から10まで)、そのインデックスをとってプロパティや値として使う
+1~nまで繰り返し(今回は1から10まで)、そのインデックスをとってプロパティやクラス名として使う
 
 ```scss
 $number: 10;
@@ -96,4 +96,46 @@ $num : 5;
   $num: $num - 1;
 }
 
+
+
+//other
+@for $i from 1 to 10 {
+  .class-#{$i} {
+    width: #{$i}px;
+  }
+}
 ```
+
+
+問
+SASSとSCSSの違いとは
+
+```scss
+//記法の違い
+・ブラケット有無
+・セミコロン有無
+・インデント有無
+
+//.sass
+div
+    margin: 0 auto
+    p
+        padding: 20px
+        span
+            font-color: red;
+
+//.scss
+div {
+    margin: 0 auto;
+    p {
+        padding: 20px;
+        span {
+             font-color: red;
+        }
+    }
+}
+
+
+
+```
+
