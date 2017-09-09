@@ -120,6 +120,40 @@ $num : 5;
 ```
 
 
+問6-2
+forディレクティブのtoとthroughの違いを教えてください.
+
+```scss
+$stringLength : 4;
+
+//その数未満まで繰り返す「to」
+@for $i from 1 to $stringLength {
+  .class#{$i} {
+    font-size: 10 + $i + px;
+  }
+}
+//css出力
+.class1 {font-size: 11px;}
+.class2 {font-size: 12px;}
+.class3 {font-size: 13px;}
+
+
+
+//その数まで繰り返す「through」
+@for $i from 1 through $stringLength {
+  .class#{$i} {
+    font-size: 10 + $i + px;
+  }
+}
+//css出力
+.class1 {font-size: 11px;}
+.class2 {font-size: 12px;}
+.class3 {font-size: 13px;}
+.class4 {font-size: 14px;}
+
+
+```
+
 問7
 SASSとSCSSの違いとは
 
@@ -413,7 +447,29 @@ extend・・・ @extend は、DRYにしようとするルールセットが本�
 see: http://postd.cc/when-to-use-extend-when-to-use-a-mixin/
 ```
 
+問
+
+.containarは背景色red。親セレクタに#idをもつ.containerのみを背景色blueにしてください
+
+```scss
+.container {
+    background:red;
+    #id &{
+       background:blue;
+    }
+}
+
+```
+
 
 参照
 http://postd.cc/when-to-use-extend-when-to-use-a-mixin/
+
+
+読み方
+```
+&(アンパサンド)
+#{}(インターポレーション)
+_hoge.scss(パーシャル)
+```
 
