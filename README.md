@@ -2,7 +2,7 @@
 
 こちらは[わたくし](http://kenjimorita.jp/)自身が普段あまり触らないSCSSを再勉強するために作ったSCSS問題集です。
 
-問題を解いて苦手意識があったディレクテブをやや使えるようになるのを目指すページです。
+問題を解いて苦手意識があったディレクテブを「やや使える」ようになるのを目指すページです。
 
 ※答えはあくまで一例ですのでもっと端的に書ける、別の方法のほうがいいというのであればそれが答えです。
 
@@ -462,8 +462,85 @@ see: http://postd.cc/when-to-use-extend-when-to-use-a-mixin/
 ```
 
 
+問
+WIP (二つの値をlisとして返して呼び出し元で利用する)
+
+```scss
+
+$base-font-size: 14;
+
+@function to-rem($pxval) {
+    @return $pxval * 1px,  $pxval / $base-font-size * 1rem;
+}
+
+.test {
+    $sizes: to-rem(24);
+    @debug $sizes;
+    margin: nth($sizes, 1);
+    margin: nth($sizes, 2);
+}
+```
+
+問
+
+下記のCSS
+
+```scss
+
+.m-button {
+  display: inline-block;
+  padding: .5em;
+  background: #ccc;
+  color: #666;
+}
+
+.m-button--error {
+  background-color: #d82d2d;
+  color: #666;
+}
+
+.m-button--success {
+  background-color: #52bf4a;
+  color: #fff;
+}
+
+.m-button--warning {
+  background-color: #c23435;
+  color: #fff;
+}
+```
+を出力をするように@eachを駆使して記述してください
+
+```scss
+// _m-buttons.scss
+$buttons: (
+  error: (#d82d2d, #666),
+  success: (#52bf4a, #fff),
+  warning: (#c23435, #fff)
+);
+
+.m-button {
+  display: inline-block;
+  padding: .5em;
+  background: #ccc;
+  color: #666;
+
+  @each $name, $colors in $buttons {
+    $bgcolor: nth($colors, 1);
+    $fontcolor: nth($colors, 2);
+
+    &--#{$name} {
+      background-color: $bgcolor;
+      color: $fontcolor;
+    }
+  }
+}
+```
+
+
 参照
 http://postd.cc/when-to-use-extend-when-to-use-a-mixin/
+https://webdesign.tutsplus.com/tutorials/an-introduction-to-sass-maps-usage-and-examples--cms-22184
 
 
 読み方
