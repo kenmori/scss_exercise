@@ -4,6 +4,9 @@
 
 問題を解いて苦手意識があったディレクテブを「やや使える」ようになるのを目指すページです。
 
+
+[こちら](https://www.sassmeister.com/)で実際に出力しながら勉強しています
+
 ※答えはあくまで一例ですのでもっと端的に書ける、別の方法のほうがいいというのであればそれが答えです。
 
 ここでいう答えはエラーを出さず問題を解消、実現できる1つの方法です
@@ -13,6 +16,8 @@
 ※スターを押していただけると励みになります。
 
 ---
+
+
 
 問1
 
@@ -26,6 +31,13 @@ p {
   } @else {
     font-color: "red"
   }
+}
+
+//or
+//評価して値だけ返す
+$a: "eee";
+p {
+    font-color: if($a == "ee", blue, red);
 }
 ```
 
@@ -566,10 +578,43 @@ CSSを出力するようにしてください
 }
 ```
 
+問
+
+下のような出力にしたい
+
+```scss
+
+#main {
+  width: 5em;
+}
+
+#sidebar {
+  width: 5em;
+}
+
+```
+
+5emを変数にして#sidebarから同じ変数を参照するようにしてください
+
+```scss
+#main {
+    $width: 5em !global;
+    width: $width;
+}
+
+#sidebar {
+    width: $width;
+}
+
+//このような参照の仕方がある程度で..
+```
+
+
+
 参照
 http://postd.cc/when-to-use-extend-when-to-use-a-mixin/
 https://webdesign.tutsplus.com/tutorials/an-introduction-to-sass-maps-usage-and-examples--cms-22184
-
+http://sass-lang.com/documentation/file.SASS_REFERENCE.html
 
 読み方
 ```
