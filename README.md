@@ -1,4 +1,4 @@
-# SCSS問題集
+# SCSS問題集(SCSS_Exercise)
 
 こちらは[わたくし](http://kenjimorita.jp/)自身が普段あまり触らないSCSSを再勉強するために作ったSCSS問題集です。
 
@@ -14,6 +14,22 @@
 ※問題文はわかりやすくお伝えするために随時修正中
 
 ※スターを押していただけると励みになります。
+
+----
+This is the SCSS exercise collection [I](http://kenjimorita.jp/) made for studying SCSS which I do not usually touch much on my own.
+
+It is a page aiming at becoming "somewhat usable" of the directive which solved the problem and had a weak consciousness.
+
+I'm studying while actually outputting it [here](https://www.sassmeister.com/)
+
+※ The answer is only an example so if you can write more briefly, if another method is better then that is the answer.
+
+The answer here is one way to solve the problem without realizing an error and realize it
+
+※ Problem texts are being revised from time to time to communicate in an easy-to-understand manner
+
+※ I will be encouraged if you push the star.
+
 
 ---
 
