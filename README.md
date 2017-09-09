@@ -218,11 +218,21 @@ funcという独自関数が存在するか、valueという変数が存在す�
 
 ```scss
 
-function-exists($name);
 
+//1
+//もしfunc関数が定義されていたら実行、ないなら5
 function-exists(func)//false
-もしfunc関数が定義されていたら実行、ないなら5
 li {
   color: if(function-exists(func), func(), 5);
 }
+//5
+
+//2
+//もし$valueが定義されていたらその値を、ないなら#fffを
+$value: #ccc;
+li {
+  color: if(valuable-exists(value), $value, #fff);
+}
 ```
+
+
