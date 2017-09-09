@@ -355,3 +355,21 @@ $icons: (
 }
 
 ```
+
+
+問
+
+mixinとextendsのユースケースは
+
+```scss
+mixin ・・・重複する箇所に値を動的に挿入する時か、Single Source of Truthを保ちながらプロジェクト全体を通して同じ宣言のグループを繰り返すことのできるSassyのコピー＆ペーストとして使う時にしましょう。
+
+extend・・・ @extend は、DRYにしようとするルールセットが本質的、テーマ的に関係性がある時だけ使いましょう。存在しない関連性を無理に作ってはいけません。もし、それをやってしまうと、プロジェクトの中で異常なグルーピングが行われてしまい、コードのソースの順序に悪影響を及ぼしてしまいます。
+
+see: http://postd.cc/when-to-use-extend-when-to-use-a-mixin/
+```
+
+
+参照
+http://postd.cc/when-to-use-extend-when-to-use-a-mixin/
+
