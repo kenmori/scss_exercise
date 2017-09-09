@@ -1,8 +1,11 @@
 # SCSS問題集(SCSS_Exercise)
 
+![](http://80452ec58b45dc2b.lolipop.jp/img/scsssvg.svg.svg)
+<img src="http://80452ec58b45dc2b.lolipop.jp/img/scsssvg.svg">
+
 こちらは[わたくし](http://kenjimorita.jp/)自身が普段あまり触らないSCSSを再勉強するために作ったSCSS問題集です。
 
-問題を解いて苦手意識があったディレクテブを「やや使える」ようになるのを目指すページです。
+問題を解いて苦手意識があったディレクティブを「やや使える」ようになるのを目指すページです。
 
 
 [こちら](https://www.sassmeister.com/)で実際に出力しながら勉強しています
@@ -11,7 +14,7 @@
 
 ここでいう答えはエラーを出さず問題を解消、実現できる1つの方法です
 
-※問題文はわかりやすくお伝えするために随時修正中
+※問題文は不完全です。鋭意修正中。
 
 ※スターを押していただけると励みになります。
 
@@ -24,9 +27,7 @@ I'm studying while actually outputting it [here](https://www.sassmeister.com/)
 
 ※ The answer is only an example so if you can write more briefly, if another method is better then that is the answer.
 
-The answer here is one way to solve the problem without realizing an error and realize it
-
-※ Problem texts are being revised from time to time to communicate in an easy-to-understand manner
+The answer is one way to solve the question without realizing an error and realize it
 
 ※ I will be encouraged if you push the star.
 
@@ -183,9 +184,30 @@ $stringLength : 4;
 ```
 
 問7
-SASSとSCSSの違いとは
+SCSSとSASSの違いとは
 
 ```scss
+
+構文の違い。
+
+Sassには2つの構文があります。
+SCSS（Sassy CSS）と呼ばれ、
+このリファレンス(Scssドキュメント)全体で使用されているものは
+CSSの構文を拡張したものです。
+
+すべての有効なCSSスタイルシートは、有効なSCSSファイルということを意味します。
+この構文は、Sass機能で強化されています。
+この構文を使用するファイルの拡張子は.scssです。
+
+SASS
+字下げされた構文（時には単に "Sass"）と呼ばれる2番目とそれより古い構文は、
+より簡潔なCSSの記述方法を提供します。
+セレクタのネストを示すには括弧ではなくインデントを使用し、
+セミコロンではなく改行を使用してプロパティを分離します。
+この構文を使用するファイルの拡張子は.sassです。
+
+see :https://stackoverflow.com/questions/5654447/whats-the-difference-between-scss-and-sass?rq=1
+
 //記法の違い
 ・ブラケット有無
 ・セミコロン有無
@@ -209,6 +231,8 @@ div {
         }
     }
 }
+
+see : https://stackoverflow.com/questions/5654447/whats-the-difference-between-scss-and-sass?rq=1
 ```
 
 問8
@@ -631,6 +655,7 @@ CSSを出力するようにしてください
 http://postd.cc/when-to-use-extend-when-to-use-a-mixin/
 https://webdesign.tutsplus.com/tutorials/an-introduction-to-sass-maps-usage-and-examples--cms-22184
 http://sass-lang.com/documentation/file.SASS_REFERENCE.html
+https://stackoverflow.com/questions/5654447/whats-the-difference-between-scss-and-sass?rq=1
 
 読み方
 ```
