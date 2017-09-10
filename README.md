@@ -344,6 +344,18 @@ $colors: (
 .color {
   color: map-get($colors, brand-red);
 }
+
+//other
+$map: (
+        A B,
+        C D
+      );
+//js map = {[A, B], [C,D]};
+@each $pair in $map {
+    $first-item  : nth($pair, 1);//nth: (List, List[index]);
+    $second-item : nth($pair, 2);
+}
+
 ```
 
 問
@@ -649,6 +661,110 @@ CSSを出力するようにしてください
 //このような参照の仕方がある程度で..
 ```
 
+問
+
+```scss
+$a: item-1, item-2, item-3;
+$b: item-4, item-5, item-6;
+```
+このaとbのリストを合わせたい。
+$c: join($a, $b);
+p {
+    content: $c;
+}
+と同じ結果になる他の記述をしてください
+
+```scss
+$c: $a + $b;
+```
+
+問
+下記のようなlistがあり、最後のlistのクラスだけmargin-bottomを指定したい。
+```scss
+$list: list-item, list-item2, list-item3;
+p.item-3 {
+  margin-bottom: 10px;
+}
+```
+nth関数を使い実現してください
+
+```scss
+$list: list-item, list-item2, list-item3;
+$list: list-item, list-item2, list-item3;
+$list-item: nth($list, length($list));
+p.#{$list-item} {
+  margin-bottom: 10px;
+}
+
+or
+
+$list-item: nth($list, -1);
+・
+・
+```
+
+問
+下記の
+
+```scss
+//1
+.foo {
+    @at-root .bar {
+        color: gray;
+    }
+}
+
+//2
+.foo {
+    @at-root .bar & {
+        color: gray;
+    }
+}
+
+//3
+.foo {
+    @at-root {
+        .bar {
+            color: gray;
+        }
+    }
+}
+```
+
+それぞれの@at-rootが適用されているクラスはどのようなCSSを生成するか答えてください
+
+
+```scss
+//1
+.foo {
+    @at-root .bar {
+        color: gray;
+    }
+}
+
+.bar { color: gray; }
+
+
+//2
+.foo {
+    @at-root .bar & {
+        color: gray;
+    }
+}
+.bar .foo { color: gray; }
+
+//3
+.foo {
+    @at-root {
+        .bar {
+            color: gray;
+        }
+    }
+}
+
+.bar { color: gray; }
+
+```
 
 
 参照
