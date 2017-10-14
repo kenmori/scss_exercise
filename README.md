@@ -54,10 +54,14 @@ list内のcが何番目かを出力
 
 ```scss
 
-$list : a, b, c;
+$list: a, b, c;
 p {
   .fafa : index($list, c);//index: number (list, list.item);
 }
+//listは
+$list: a b c;
+でも問題ない
+
 ```
 
 問5
@@ -107,7 +111,7 @@ $num : 5;
 ```
 
 
-問
+問7
 SASSとSCSSの違いとは
 
 ```scss
@@ -134,12 +138,9 @@ div {
         }
     }
 }
-
-
-
 ```
 
-問
+問8
 
 ```scss
 @function halfWidth($width: 50px){
@@ -150,7 +151,9 @@ p {
 }
 ```
 
-問 色を投げると.5のopacityになるrgba組み込み関数
+問9
+
+色を投げると.5のopacityになるrgba組み込み関数
 
 ```scss
 .classe {
@@ -159,3 +162,67 @@ p {
 ```
 
 
+問10
+
+mixinが存在していれば#fffをなければ#000を指定する
+
+```scss
+@mixin arrow {
+  color: #e2e2e2;
+}
+.mixin-exits {
+  &:before {
+    color: if(mixin-exists(arrow), #fff, #000);
+  }
+}
+```
+
+
+問11
+
+```scss
+//unitless 指定した数値が単位を持っていればfalse,　持ってなければtrue
+
+@mixin caluclate($x, $y){
+  @if unitless($x){
+    @warn "渡す際pxをつけることを忘れています : #{$x}";
+    $x: 1px * $x;
+  }
+  @if unitless($y){
+    @warn "渡す際pxをつけることを忘れています : #{$y}";
+    $y: 1px * $y;
+  }
+  position: relative;
+  left: $x;
+  top: $y;
+}
+
+.ul {
+  @include caluclate(7, 2);
+}
+```
+
+問12
+
+単位を持っていたらture、持っていなかったらfalseを返す
+```scss
+.ul {
+  content: if(unit(100px), 100, 200);//"px"
+}
+```
+
+問13
+
+funcという独自関数が存在するか、valueという変数が存在するか、グローバルスコープにgvalue変数が存在するかを調べてください
+
+
+```scss
+
+function-exists($name);
+
+function-exists(func)//false
+もしfunc関数が定義されていたら実行、ないなら5
+li {
+  color: if(function-exists(func), func(), 5);
+}
+```
