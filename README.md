@@ -235,4 +235,20 @@ li {
 }
 ```
 
+問14
+colorオブジェクトでkey-valueで値を管理、.color内のcolorの値として取得する
+
+```scss
+
+$colors: (
+  brand-red: #c0392b,
+  brand-blue: #2980b9,
+  text-gray: #2c3e50,
+  text-sliver: #bdc3c7
+);
+.color {
+  color: map-get($colors, brand-red);
+}
+```
+
 
