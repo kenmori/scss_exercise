@@ -767,6 +767,28 @@ $list-item: nth($list, -1);
 ```
 
 
+問
+@if構文のコンディションの箇所を「どちらもtrueなら実行」、「どちらかがtrueなら実行」、「trueじゃなければ実行」それぞれ3パターンを記述してください
+
+```scss
+$var1: true;
+$var2: true;
+@if $var1 and $var2 {
+  //実行される
+}
+
+$var3: true;
+$var4: true;
+@if $var3 or $var4 {
+  //どちらかtrueなら実行
+}
+
+$var5: true;
+@if not $var5 {
+  //trueじゃないなら実行
+}
+
+```
 参照
 http://postd.cc/when-to-use-extend-when-to-use-a-mixin/
 https://webdesign.tutsplus.com/tutorials/an-introduction-to-sass-maps-usage-and-examples--cms-22184
