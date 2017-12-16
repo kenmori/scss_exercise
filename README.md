@@ -789,6 +789,34 @@ $var5: true;
 }
 
 ```
+
+問
+
+```
+.class1 {
+  background: #111;
+}
+```
+上のようなclass1\~9を連番で作り、background値をそれぞれ#111\~#999としてください
+
+```
+@for $i from 1 through 9 {
+  .class#{$i}{
+    background: unquote("\##{$i}#{$i}#{$i}");
+  }
+}
+//unquote()は文字列を解除してくれます
+```
+
+問
+
+.transとしてcolorプロパティに#000のopacity0.3を指定してください
+
+```
+.trans {
+  color: transparentize(#000, 0.3);
+}
+```
 参照
 http://postd.cc/when-to-use-extend-when-to-use-a-mixin/
 https://webdesign.tutsplus.com/tutorials/an-introduction-to-sass-maps-usage-and-examples--cms-22184
@@ -800,5 +828,9 @@ https://stackoverflow.com/questions/5654447/whats-the-difference-between-scss-an
 &(アンパサンド)
 #{}(インターポレーション)
 _hoge.scss(パーシャル)
+[]Brackets(ブラケッツ)
+{}Brace (ブレース)
+<>Angle brackets
+「」Angles
 ```
 
