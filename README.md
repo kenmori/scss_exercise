@@ -817,6 +817,23 @@ $var5: true;
   color: transparentize(#000, 0.3);
 }
 ```
+
+WIP
+
+```
+$themes: theme1, theme2, theme3;
+$colors: red, blue, green;
+
+@mixin colorTheme($keyColor) {
+  color: nth($colors, $keyColor);
+}
+
+@each $theme in $themes {
+  .class-#{$theme} {
+    @include colorTheme(index($themes, $theme));
+  }
+}
+```
 参照
 http://postd.cc/when-to-use-extend-when-to-use-a-mixin/
 https://webdesign.tutsplus.com/tutorials/an-introduction-to-sass-maps-usage-and-examples--cms-22184
