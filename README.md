@@ -834,6 +834,40 @@ $colors: red, blue, green;
   }
 }
 ```
+
+問 下記のようなmixinを作った
+```
+@mixin colors($text, $background, $border) {
+  color: $text;
+  background-color: $background;
+  border-color: $border;
+}
+```
+のだが、
+```
+$values: #ff0000, #00ff00, #0000ff;
+.primary {
+  @include colors($values...);
+}
+
+```
+このようにして使うと何にどの引き数値として渡しているか初見で分かりづらく、また引数の順番に依存する。
+分かりやすくしてください。
+
+```
+@mixin colors($text, $background, $border) {
+  color: $text;
+  background-color: $background;
+  border-color: $border;
+}
+
+$value-map: (text: #00ff00, background: #0000ff, border: #ff0000);
+.secondary {
+  @include colors($value-map...);
+}
+```
+
+
 参照
 http://postd.cc/when-to-use-extend-when-to-use-a-mixin/
 https://webdesign.tutsplus.com/tutorials/an-introduction-to-sass-maps-usage-and-examples--cms-22184
