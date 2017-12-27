@@ -867,12 +867,54 @@ $value-map: (text: #00ff00, background: #0000ff, border: #ff0000);
 }
 ```
 
+問WIP
+ブロックmix-in
+```
+.colors--white {
+  background-color: blue;
+  color: white;
+  border-color: blue;
+}
 
+.colors--red {
+  background-color: blue;
+  color: red;
+  border-color: blue;
+}
+
+```
+
+問WIP
+```
+@each $animal, $color, $cursor in (puma, black, default),
+                                  (sea-slug, blue, pointer),
+                                  (egret, white, move) {
+  .#{$animal}-icon {
+    background-image: url('/images/#{$animal}.png');
+    border: 2px solid $color;
+    cursor: $cursor;
+  }
+}
+//output
+.puma-icon {
+  background-image: url('/images/puma.png');
+  border: 2px solid black;
+  cursor: default; }
+.sea-slug-icon {
+  background-image: url('/images/sea-slug.png');
+  border: 2px solid blue;
+  cursor: pointer; }
+.egret-icon {
+  background-image: url('/images/egret.png');
+  border: 2px solid white;
+  cursor: move; }
+```
 参照
 http://postd.cc/when-to-use-extend-when-to-use-a-mixin/
 https://webdesign.tutsplus.com/tutorials/an-introduction-to-sass-maps-usage-and-examples--cms-22184
 http://sass-lang.com/documentation/file.SASS_REFERENCE.html
 https://stackoverflow.com/questions/5654447/whats-the-difference-between-scss-and-sass?rq=1
+http://sass-lang.com/documentation/file.SASS_REFERENCE.html#_debug
 
 読み方
 ```
